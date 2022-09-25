@@ -57,7 +57,7 @@ class PrototypesController < ApplicationController
   end
   def move_to_index
     #現在ログインしているユーザー  ==  プロトタイプの投稿者（ユーxsー）
-    unless current_user == @prototype
+    unless current_user.id == @prototype.user_id
       redirect_to action: :index
     end
   end
